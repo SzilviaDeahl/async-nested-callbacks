@@ -58,7 +58,7 @@ setTimeout(function () {
 console.log("b");
 ```
 
-[Enter your answer here]
+I am going to see 'b' first, because the setTimeout will put the function into the heap, then console.log('b') executes, and then the setTimeout function logs 'a'
 
 Go ahead and open up a `node` REPL, or a Chrome Snippet and run that code. Is the result what you expected?
 
@@ -96,6 +96,8 @@ DOH!  Yout get `undefined`.  Here's what happens:
 1. `id` gets set to `'abc'`, but the console.log has _already_ happened
 
 How would you fix that code such that you are properly logging the `id`?
+
+I would put the console.log(id) inside the function, right after 'id = doc.\_id'
 
 **#2 - Evaluate nested callbacks**
 
